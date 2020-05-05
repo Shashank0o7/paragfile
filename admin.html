@@ -16,14 +16,12 @@
     background:grey;
     background-size: 100% 100%;
   }
-    button{
-      width: 200px;
-      
-    }
+    
     td{
-      font-size: 25px;
+      font-size:2.5rem;
       color: black;
     }
+   
        
     
     .navbar {
@@ -31,35 +29,72 @@
       border-radius: 0;
       overflow: hidden;
     }
-    
-
-    .row.content {height: 450px}
-    
-
-    .sidenav {
-
-      padding-top: 80px;
-     /* background-color:white;*/
-      height: auto;
+     /* The side navigation menu */
+     .sidebar {
+      margin-top: 50px;
+      padding: ;
+      width: 200px;
+     /* background-color: #f1f1f1;*/
+      position: fixed;
+      height: 100%;
+      overflow: auto;
     }
-    #btn1{
-      width:100px;
+
+    
+    .sidebar a {
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
     }
-    #btn2{
-      width:100px;
+    .sidebar a.active {
+      background-color:green;
+      color: white;
+    }
+
+
+    .sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+
+
+    div.content {
+      margin-left: 200px;
+      padding: 1px 16px;
+      height: 1000px;
     }
     
     
 
     
 
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 80px;
-      }
-      .row.content {height:auto;} 
       
+    @media screen and (max-width: 700px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      td{
+        font-size:1.5rem;
+      }
+
+      .sidebar a {
+        float: left;
+      }
+
+      div.content {
+        margin-left: 0;
+      }
+    }
+
+    
+    @media screen and (max-width: 500px) {
+      .sidebar a {
+        text-align: center;
+        float: none;
+      }
     }
     
   </style>
@@ -91,26 +126,21 @@
   <!--top navigation bar ends-->
 
   <!--side navigation bar starts-->
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-        
-      <button id="btn1" class="btn btn-info"><a href="#" style="color:black; text-decoration:none" ><b>Home</b></a></button><br><br>
-      <button class="btn btn-info" ><a href="#" style="color:black; text-decoration:none" ><b>Show Registered User</b></a></button><br><br>
-      <button  class="btn btn-info btn-block" ><a href="#" style="color:black; text-decoration:none" ><b>Show Message</b></a></button><br><br>
-      <button class="btn btn-info"  ><a href="#" style="color:black; text-decoration:none" ><b>Add New Course</b></a></button><br><br>
-      <button class="btn btn-info"><a href="#" style="color:black; text-decoration:none" ><b>Add New Subject</b></a></button><br><br>
-      <button class="btn btn-info"><a href="#" style="color:black; text-decoration:none" ><b>Add New Chapter</b></a></button><br><br>
-      <button class="btn btn-info"><a href="#" style="color:black; text-decoration:none" ><b>Add New Video</b></a></button><br><br>
-      <button class="btn btn-info"><a href="#" style="color:black; text-decoration:none" ><b>Generate Test</b></a></button><br><br>
-      <button class="btn btn-info"><a href="#" style="color:black; text-decoration:none" ><b>Courses By You</b></a></button><br><br>
-      
-      <button id="btn2" class="btn btn-warning"><a href="#" style="color:black; text-decoration:none" ><b>Go back</b></a></button>
- 
-    </div>
+  <div class="col-sm-2 sidebar ">
+    <a  href="#">Home</a>
+    <a href="#">Show Registered Users</a>
+    <a class="active" href="#">Show Messages</a>
+    <a href="#">Add New Course</a>
+    <a href="#">Add New Subject</a>
+    <a href="#">Add New Chapter</a>
+    <a href="#">Add New Video</a>
+    <a href="#">Generate Test</a>
+    <a href="#">Courses By You</a>
+    <a href="#" style="color:red;">Go Back</a>
+  </div>
     <!--side navigation bar ends-->
     <!--middle box starts-->
-    
+    <div class="content">
     <div class="col-sm-8 text-left"> 
         <br>
         <br>
